@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jose Andres Matias Castro - Portafolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        /* Layout contenedor estrecho */
+        .layout {
+            display: flex;
+            min-height: 100vh;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        /* Lateral Izquierdo: Fijo / Estático */
+        .sidebar {
+            width: 300px;
+            padding: 50px 20px 30px 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 1px solid #eaeaea;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .sidebar h1 {
+            font-size: 24px;
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .sidebar-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .links-bar {
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .links-bar a {
+            color: #0056b3;
+            text-decoration: none;
+            margin: 0 3px;
+        }
+
+        .links-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .bio-text {
+            font-size: 14px;
+            color: #555;
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        /* Panel Derecho: Desplazable */
+        .content {
+            flex-grow: 1;
+            padding: 50px 20px 30px 20px;
+            max-width: 650px;
+        }
+
+        .main-title {
+            font-size: 35px;
+            color: #0a2540;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* Badges de Tecnologías */
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+
+        .tech-badge {
+            width: 36px;
+            height: 36px;
+            display: block;
+            object-fit: contain;
+        }
+
+        .tech-badge-large {
+            width: 70px;
+            height: 70px;
+        }
+
+        .intro-desc {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        /* Títulos de Categorías de Proyectos */
+        .category-title {
+            font-size: 20px;
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 6px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Contenedor de Proyectos */
+        .projects-container {
+            font-size: 14px;           
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .project-card {
+            font-size: 14px;    
+            background: #fff;
+            padding-bottom: 10px;
+        }
+
+        .project-card h3 {
+            font-size: 16px;
+            color: #0a2540;
+            margin-bottom: 6px;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        /* Contenedor de Imagen de Altura 320px */
+        .single-image-container {
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            background-color: #f7fafc;
+        }
+
+        .single-img {
+            width: 100%;
+            height: 320px;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Diseño Responsivo */
+        @media (max-width: 800px) {
+            .layout {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid #eaeaea;
+            }
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="layout">
+        <!-- BARRA LATERAL IZQUIERDA (ESTÁTICA) -->
+        <aside class="sidebar">
+            <h1>Jose Andres Matias Castro</h1>
+            <img src="FIGURAS/F1.jpg" alt="Jose Andres Matias Castro" class="sidebar-img">
+            
+            <div class="subtitle">
+                <span> Structural Engineering & BIM</span>
+            </div>
+
+            <div class="links-bar">
+                <a href="https://linkedin.com/in/jamc16" target="_blank">LinkedIn</a> | 
+                <a href="tel:+51966967273">+51 966967273</a><br>
+                <a href="mailto:jmatiasc20@gmail.com">jmatiasc20@gmail.com</a>
+            </div>
+
+            <p class="bio-text">
+                Bachiller en Ingeniería Civil por la Universidad Nacional Federico Villarreal, con conocimientos en ingeniería estructural y metodología BIM. Su perfil se orienta al análisis y diseño sismorresistente mediante metodologías basada en fuerzas (RNE E0.30,E.060 y ACI 318) y desplazamientos, así como al análisis lineal y no lineal de estructuras.
+            <br><br>
+            <p class="bio-text">
+                Cuenta con experiencia en el diseño de estructuras de concreto armado, acero, albañilería y sistemas estructurales especiales, como estructuras postensadas, y en el manejo de software especializado para el modelamiento, análisis y diseño estructural. Complementa su perfil con herramientas BIM aplicadas al modelamiento, coordinación y desarrollo de proyectos.
+            </p>
+        </aside>
+
+        <!-- CONTENIDO DERECHO (DESPLAZABLE) -->
+        <main class="content">
+            <h1 class="main-title">PORTAFOLIO</h1>
+            <div class="section-subtitle">Ingeniería Estructural y BIM</div>
+
+            <!-- Badges de especialidades / software -->
+            <div class="tech-icons">
+                <img src="FIGURAS/ETABS.png" class="tech-badge" alt="ETABS">
+                <img src="FIGURAS/SAP2000.png" class="tech-badge" alt="SAP2000">
+                <img src="FIGURAS/SAFE.png" class="tech-badge" alt="SAFE">
+                <img src="FIGURAS/IS.png" class="tech-badge" alt="IDEA StatiCa">
+                <img src="FIGURAS/autocad.png" class="tech-badge" alt="AutoCAD">
+                <img src="FIGURAS/revit.png" class="tech-badge" alt="Revit">     
+                <img src="FIGURAS/PYTHON.png" class="tech-badge" alt="Python">                          
+                <img src="FIGURAS/OPENSEES.png" class="tech-badge tech-badge-large" alt="OpenSees">
+                <img src="FIGURAS/adapt.png" class="tech-badge tech-badge-large" alt="ADAPT PT RC">
+                <img src="FIGURAS/office.png" class="tech-badge tech-badge-large" alt="Office">
+            </div>
+
+            <p class="intro-desc">
+                Una de las ventajas más significativas para los ingenieros estructurales en la actualidad es integrar la coordinación BIM y la automatización en el flujo de diseño, permitiendo optimizar el comportamiento sísmico y elevar la precisión estructural en cada edificación.
+            </p>
+
+            <!-- SECCIÓN 1: PROYECTOS ESTRUCTURALES -->
+            <h2 class="category-title">Proyectos Estructurales</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>Evaluación Estructural de Edificación Riosa</h3>
+                    <p>Análisis de capacidad resistente y evaluación del comportamiento sísmico de muros de concreto armado.</p>
+                    <div class="single-image-container">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" class="single-img" alt="Evaluación Estructural Riosa">
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Evaluación Edificio Multifamiliar</h3>
+                    <p>Análisis de respuesta estructural y verificación de deriva ante exigencias de la norma E.030.</p>
+                    <div class="single-image-container">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" class="single-img" alt="Evaluación Edificio Multifamiliar">
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: PROYECTOS BIM -->
+            <h2 class="category-title">Proyectos BIM</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>Coordinación de Estructuras BIM</h3>
+                    <p>Modelado 3D y detección de interferencias en Autodesk Revit para sistemas de concreto armado.</p>
+                    <div class="single-image-container">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" class="single-img" alt="Coordinación BIM">
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Modelado y Planimetría Estructural 3D</h3>
+                    <p>Generación de documentación técnica y despiece de armado mediante metodología BIM.</p>
+                    <div class="single-image-container">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" class="single-img" alt="Modelado 3D BIM">
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: PROYECTOS PROPIOS -->
+            <h2 class="category-title">Proyectos Propios</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>Automatización del Análisis Sísmico con Python</h3>
+                    <p>Desarrollo de scripts interactivos para extracción automática de datos de ETABS y verificación normativa E.030.</p>
+                    <div class="single-image-container">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" class="single-img" alt="Automatización Python ETABS">
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Diseño de Cimentaciones Superficiales</h3>
+                    <p>Herramienta propia de cálculo y verificación de zapatas aisladas y combinadas en SAFE.</p>
+                    <div class="single-image-container">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" class="single-img" alt="Diseño Cimentaciones">
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
